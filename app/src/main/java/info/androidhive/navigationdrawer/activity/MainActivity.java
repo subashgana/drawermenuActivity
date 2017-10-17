@@ -27,7 +27,8 @@ import info.androidhive.navigationdrawer.fragment.MoviesFragment;
 import info.androidhive.navigationdrawer.fragment.NotificationsFragment;
 import info.androidhive.navigationdrawer.fragment.PhotosFragment;
 import info.androidhive.navigationdrawer.fragment.SettingsFragment;
-import info.androidhive.navigationdrawer.other.CircleTransform;
+
+import static info.androidhive.navigationdrawer.R.id.icon;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
+
        // fab = (FloatingActionButton) findViewById(R.id.fab);
 
         // Navigation view header
@@ -255,7 +257,7 @@ public class MainActivity extends AppCompatActivity {
                         navItemIndex = 4;
                         CURRENT_TAG = TAG_SETTINGS;
                         break;
-                    case R.id.nav_about_us:
+                  /*  case R.id.nav_about_us:
                         // launch new intent instead of loading fragment
                         startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
                         drawer.closeDrawers();
@@ -264,7 +266,7 @@ public class MainActivity extends AppCompatActivity {
                         // launch new intent instead of loading fragment
                         startActivity(new Intent(MainActivity.this, PrivacyPolicyActivity.class));
                         drawer.closeDrawers();
-                        return true;
+                        return true;*/
                     default:
                         navItemIndex = 0;
                 }

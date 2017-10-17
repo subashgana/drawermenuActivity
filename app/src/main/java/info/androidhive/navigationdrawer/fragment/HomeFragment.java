@@ -3,11 +3,18 @@ package info.androidhive.navigationdrawer.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
+import info.androidhive.navigationdrawer.Adapter.Pager;
 import info.androidhive.navigationdrawer.R;
 
 /**
@@ -27,6 +34,12 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private TabLayout tabLayout;
+
+
+    private ViewPager viewPager;
+    ImageView login;
+    DrawerLayout drawer;
 
     private OnFragmentInteractionListener mListener;
 
@@ -65,7 +78,35 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = (FrameLayout) inflater.inflate(R.layout.fragment_home, container, false);
+
+        tabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
+        // nvDrawer = (NavigationD) findViewById(R.id.);
+//        login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent logins = new Intent(Menu.this, Login.class);
+//                startActivity(logins);
+//            }
+//        });
+        //Adding the tabs using addTab() method
+        tabLayout.addTab(tabLayout.newTab().setText("DESSERTS"));
+        tabLayout.addTab(tabLayout.newTab().setText("BURGERS"));
+        tabLayout.addTab(tabLayout.newTab().setText("SEA FOOD"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        //Initializing viewPager
+        viewPager = (ViewPager)view.findViewById(R.id.pager);
+
+        //Creating our pager adapter
+        Pager adapter = new Pager(getFragmentManager(), tabLayout.getTabCount());
+
+        //Adding adapter to pager
+        viewPager.setAdapter(adapter);
+
+        //Adding onTabSelectedListener to swipe views
+        //tabLayout.setOnTabSelectedListener();
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

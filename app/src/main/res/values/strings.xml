@@ -8,10 +8,10 @@
 
     <!-- Navigation Drawer menu labels -->
     <string name="nav_home">Home</string>
-    <string name="nav_photos">Photos</string>
-    <string name="nav_movies">Movies</string>
-    <string name="nav_notifications">Notifications</string>
-    <string name="nav_settings">Settings</string>
+    <string name="nav_photos">order Tracking</string>
+    <string name="nav_movies">Promos</string>
+    <string name="nav_notifications">Branches</string>
+    <string name="nav_settings">Account</string>
     <string name="nav_about_us">About Us</string>
 
     <!-- Toolbar titles when navigation menu item is selected -->
@@ -29,4 +29,9 @@
     <string name="action_logout">Logout</string>
     <string name="action_mark_all_read">Mark All as Read</string>
     <string name="privacy_policy">Privacy Policy</string>
+
+
+    <style name="DrawerIconStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">#000000</item>
+    </style>
 </resources>
